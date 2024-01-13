@@ -4,11 +4,11 @@ using ShapeTracker.Models;
 namespace ShapeTracker
 {
 
-  public class Program
+  class Program
   {
     static void Main()
     {
-      Triangle testTriangle = new Triangle(17,4,4);
+      Triangle testTriangle = new Triangle(3,4,5);
       Console.WriteLine(testTriangle.GetType());
       Console.WriteLine($"Side one of triangle: {testTriangle.GetSide1()} ");
       Console.WriteLine($"Side two of the triangle: {testTriangle.GetSide2()}");
@@ -16,6 +16,13 @@ namespace ShapeTracker
       Console.WriteLine("Want to know what type of triangle?");
       Console.WriteLine("calculating...");
       Console.WriteLine($"Your triangle is: {testTriangle.CheckType()}");
+      Console.WriteLine("Updating...");
+      testTriangle.SetSide1(44);
+      testTriangle.SetSide2(44);
+      testTriangle.SetSide3(70);
+      Console.WriteLine($"Actually, I've just changed the values of your triangle's sides to {testTriangle.GetSide1()}, {testTriangle.GetSide2()}, and {testTriangle.GetSide3()}.");
+      Console.WriteLine($"Actually, I've just changed the values of your triangle's sides to {testTriangle.GetSide1()}, {testTriangle.GetSide2()}, and {testTriangle.GetSide3()}.");
+      Console.WriteLine($"Now your triangle is: {testTriangle.CheckType()}.");
     }
   }
 }

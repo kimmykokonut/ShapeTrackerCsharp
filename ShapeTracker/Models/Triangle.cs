@@ -24,6 +24,18 @@ namespace ShapeTracker.Models
     {
       return _side3;
     }
+    public void SetSide1(int newSide)
+    {
+      _side1 = newSide;
+    }
+    public void SetSide2(int newSide)
+    {
+      _side2 = newSide;
+    }
+    public void SetSide3(int newSide)
+    {
+      _side3 = newSide;
+    }
     public string CheckType()
     {
       if ((_side1 > (_side2 + _side3)) || (_side2 > (_side1 + _side3)) || (_side3 > (_side1 + _side2)))
