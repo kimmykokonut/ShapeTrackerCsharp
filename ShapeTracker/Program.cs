@@ -27,7 +27,7 @@ namespace ShapeTracker
     {
       Console.WriteLine("Please confirm that you entered in  your triangle correctly:");
       Console.WriteLine($"Side 1 has a length of {tri.Side1}."); //using Properties
-      Console.WriteLine($"Side 2 has a length of {tri.GetSide2()}.");
+      Console.WriteLine($"Side 2 has a length of {tri.Side2}."); //using auto-impl. properties
       Console.WriteLine($"Side 3 has a length of {tri.GetSide3()}.");
       Console.WriteLine("Is that correct? Enter 'yes' to proceed or 'no' to re-enter the triangle's sides");
       string userInput = Console.ReadLine();
@@ -45,7 +45,7 @@ namespace ShapeTracker
         Console.WriteLine("Enter a third number:");
         string stringNumber3 = Console.ReadLine();
         tri.Side1 = int.Parse(stringNumber1); //using properties
-        tri.SetSide2(int.Parse(stringNumber2));
+        tri.Side2 = int.Parse(stringNumber2);  //using auto-imp properties
         tri.SetSide3(int.Parse(stringNumber3));
         ConfirmOrEditTriangle(tri);
       }
