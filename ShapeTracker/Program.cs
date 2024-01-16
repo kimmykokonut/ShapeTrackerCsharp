@@ -50,5 +50,24 @@ namespace ShapeTracker
         ConfirmOrEditTriangle(tri);
       }
     }
+    static void CheckTriangleType(Triangle tri)
+    {
+      string result = tri.CheckType();
+      Console.WriteLine("-----------------------------------------");
+      Console.WriteLine("Your result is: " + result + ".");
+      Console.WriteLine("-----------------------------------------");
+      Console.WriteLine("What's next?");
+      Console.WriteLine("Would you like to check a new triangle (new)?");
+      Console.WriteLine("Please enter 'new' to check the type of a new triangle. To exit, enter any key.");
+      string userResponse = Console.ReadLine();
+      if (userResponse == "new" || userResponse == "New")
+      {
+        Main();
+      }
+      else
+      {
+        Console.WriteLine("Goodbye!");
+      }
+    }
   }
 }
