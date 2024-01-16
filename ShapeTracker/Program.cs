@@ -13,7 +13,7 @@ namespace ShapeTracker
       Console.WriteLine("Welcome to the Shape Tracker app!");
       Console.WriteLine("We'll calculate what type of triangle you have based off of the lengths of the triangle's 3 sides.");
       CreateTriangle();
-      
+
     }
     static void CreateTriangle()
     {
@@ -58,13 +58,42 @@ namespace ShapeTracker
     static void ShowList()
     {
       List<Triangle> triangles = Triangle.GetAll();
-      Console.WriteLine("-----------------------------------------");
-      Console.WriteLine($"Here is the list of Triangles: ");
-      Console.WriteLine("-----------------------------------------");
-      foreach (Triangle triangle in triangles)
+      if (triangles.Count > 0)
       {
-        Console.WriteLine($"Triangle Side1: {triangle.Side1}, Side2: {triangle.Side2}, Side3: {triangle.GetSide3()}, Type: {triangle.CheckType()}");
+        Console.WriteLine("-----------------------------------------");
+        Console.WriteLine($"Here is the list of Triangles: ");
+        Console.WriteLine("-----------------------------------------");
+        foreach (Triangle triangle in triangles)
+        {
+          Console.WriteLine($"Triangle Side1: {triangle.Side1}, Side2: {triangle.Side2}, Side3: {triangle.GetSide3()}, Type: {triangle.CheckType()}");
+        }
+        Console.WriteLine($"Do you want to clear the list? ");
+        Console.WriteLine("Please enter yes or no");
+        string userResponse = Console.ReadLine();
+        if (userResponse == "yes" || userResponse == "Yes")
+        {
+          ClearList();
+        }
+        else if (userResponse == "no" || userResponse == "No")
+        {
+          Navigate();
+        }
       }
+      else 
+      {
+        Console.WriteLine("-----------------------------------------");
+        Console.WriteLine("No List");
+        Console.WriteLine("-----------------------------------------");
+        Navigate();
+      }
+
+    }
+
+    static void ClearList()
+    {
+      Triangle.ClearAll();
+      Console.WriteLine("-----------------------------------------");
+      Console.WriteLine("Your list has been cleared.");
       Navigate();
     }
     static void Navigate()
