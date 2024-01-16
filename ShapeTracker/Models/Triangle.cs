@@ -9,13 +9,15 @@ namespace ShapeTracker.Models
       get { return _side1; }
       set { _side1 = value; }
     }
-    public Triangle(int length1)
+    public int Side2 { get; }
+
+    public Triangle(int length1, int length2)
     {
       _side1 = length1;
+      Side2 = length2;
     }
-    
-    //   set { _side1 = value; }
-    // }
+
+   
     // public int Side2 { get; set; }  //creates a private _side2 field. not visible b/c implicit.
     // private int _side3;
     // private static List<Triangle> _instances = new List<Triangle> {};
