@@ -22,12 +22,11 @@ namespace ShapeTracker.Models
     {
       return _side3;
     }
-
+    public void SetSide3(int newValue)
+    {
+      _side3 = newValue;
+    }
     //   _instances.Add(this);
-    // }
-    // public void SetSide3(int newSide)
-    // {
-    //   _side3 = newSide;
     // }
     // public string CheckType()
     // {
