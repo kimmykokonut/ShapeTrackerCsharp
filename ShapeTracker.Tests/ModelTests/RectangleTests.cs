@@ -1,11 +1,17 @@
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using ShapeTracker.Models;
+using System.Collections.Generic; 
+using System;
 
 namespace ShapeTracker.Tests
 {
   [TestClass]
-  public class RectangleTests
+  public class RectangleTests : IDisposable
   {
+    public void Dispose()
+    {
+      Rectangle.ClearAll();
+    }
 
     [TestMethod]
     public void RectangleConstructor_CreatesInstanceOfRectangle_Rectangle()
@@ -59,6 +65,18 @@ namespace ShapeTracker.Tests
       int result = test.GetArea();
       Assert.AreEqual(area, result);
     }
+    [TestMethod]
+    public void GetAll_ReturnsAllRectangleInstances_List()
+    {
+      Rectangle rect1 = new Rectangle(2, 3);
+      Rectangle rect2 = new Rectangle(21, 3);
+      Rectangle rect3 = new Rectangle(1, 3);
+      List<Rectangle> expected = new List<Rectangle> { rect1, rect2, rect3 };
+      List<Rectangle> actualResult = Rectangle.GetAll();
+      CollectionAssert.AreEqual(expected, actualResult);
+    }
+    [TestMethod]
+    
 
   }
 }
