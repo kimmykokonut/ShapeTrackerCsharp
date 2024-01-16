@@ -38,7 +38,7 @@ namespace ShapeTracker.Models
       }
       else
       {
-        return "else land";
+        return "isosceles triangle";
       }
     }
     //   _instances.Add(this);
