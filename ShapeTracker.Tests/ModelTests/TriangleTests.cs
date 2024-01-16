@@ -6,6 +6,11 @@ namespace ShapeTracker.Tests
   [TestClass]
   public class TriangleTests
   {
-    //tests here
+    [TestMethod]
+    public void TriangleConstructor_CreatesInstanceOfTriangle_Triangle() //declare test method
+    {
+      Triangle newTriangle = new Triangle();
+      Assert.AreEqual(typeof(Triangle), newTriangle.GetType());
+    }
   }
 }
