@@ -63,6 +63,13 @@ namespace ShapeTracker.Tests
     newTriangle.SetSide3(newLength3);
     Assert.AreEqual(newLength3, newTriangle.GetSide3());
   }
+  [TestMethod]
+  public void CheckType_DeterminesWhenNotATriangle_String()
+  {
+    Triangle notATriangle = new Triangle(3, 4, 88);
+    string triType = notATriangle.CheckType();
+    Assert.AreEqual("not a triangle", triType);
+  }
 
   }
 }
