@@ -9,8 +9,18 @@ namespace ShapeTracker.Tests
     [TestMethod]
     public void TriangleConstructor_CreatesInstanceOfTriangle_Triangle() //declare test method
     {
-      Triangle newTriangle = new Triangle();
+      Triangle newTriangle = new Triangle(2);
       Assert.AreEqual(typeof(Triangle), newTriangle.GetType());
     }
+    [TestMethod]
+    public void GetSide1_ReturnsSide1_Int()
+    {
+      int length1 = 3;
+      Triangle newTriangle = new Triangle(length1);
+      int result = newTriangle.Side1;
+      Assert.AreEqual(length1, result);
+    }
+
+
   }
 }
