@@ -26,18 +26,26 @@ namespace ShapeTracker.Models
     {
       _side3 = newValue;
     }
+    public string CheckType()
+    {
+      if ((_side1 > (Side2 + _side3)) || (Side2 > (_side1 + _side3)) || (_side3 > (_side1 + Side2)))
+      {
+      return "not a triangle";
+      }
+      else if ((_side1 != Side2) && ((_side1 != _side3)) && ((Side2 != _side3)))
+      {
+        return "scalene triangle";
+      }
+      else
+      {
+        return "else land";
+      }
+    }
     //   _instances.Add(this);
     // }
     // public string CheckType()
     // {
-    //   if ((_side1 > (Side2 + _side3)) || (Side2 > (_side1 + _side3)) || (_side3 > (_side1 + Side2)))
-    //   {
-    //   return "not a triangle";
-    //   }
-    //   else if ((_side1 != Side2) && ((_side1 != _side3)) && ((Side2 != _side3)))
-    //   {
-    //     return "scalene triangle";
-    //   }
+    //   
     //   else if ((_side1 == Side2) && (_side1 == _side3))
     //   {
     //     return "equilateral triangle";
