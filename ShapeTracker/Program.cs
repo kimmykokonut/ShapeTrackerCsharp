@@ -1,6 +1,7 @@
 using System;
 using System.Collections.Generic;
 using ShapeTracker.Models;
+using ShapeTracker.UserInterfaceModels;
 
 namespace ShapeTracker
 {
@@ -10,7 +11,7 @@ namespace ShapeTracker
     static void Main()
     {
       Console.WriteLine("*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*");
-      Console.WriteLine("Welcome to the Shape Tracker app!");
+      Console.WriteLine(ShapeTracker.UserInterfaceModels.WelcomeBanner.Welcome);
       Console.WriteLine("Choose 't' to make a triangle and determine it's type or 'r' to make a rectangle and calculate it's area...");
       string userInput = Console.ReadLine(); 
       if (userInput == "t" || userInput == "T")
@@ -22,6 +23,9 @@ namespace ShapeTracker
       {
         Console.WriteLine("We'll calculate the area of a rectangle based off of the lengths of the rectangle's 2 sides.");
         CreateRectangle();
+      }
+      else{
+        Console.WriteLine("Goodbye");
       }
     }
     static void CreateTriangle()
@@ -59,7 +63,7 @@ namespace ShapeTracker
     static void CheckTriangleType(Triangle tri)
     {
       string result = tri.CheckType();
-      Console.WriteLine("-----------------------------------------");
+      Console.WriteLine(ShapeTracker.UserInterfaceModels.SubMenuBanner.menuBanner);
       Console.WriteLine("Your result is: " + result + ".");
       Console.WriteLine("-----------------------------------------");
       Navigate();
@@ -122,10 +126,9 @@ namespace ShapeTracker
       }
       else
       {
-        Console.WriteLine("Goodbye!");
+        Console.WriteLine(ShapeTracker.UserInterfaceModels.GoodbyeBanner.Goodbye);      }
       }
-    }
-    static void CreateRectangle()
+      static void CreateRectangle()
     {
       Console.WriteLine("Please enter a number:");
       string stringNumber1 = Console.ReadLine();
