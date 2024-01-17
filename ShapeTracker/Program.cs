@@ -25,7 +25,7 @@ namespace ShapeTracker
         CreateRectangle();
       }
       else{
-        Console.WriteLine("Goodbye");
+        Console.WriteLine("You entered an invalid choice. Closing application...");
       }
     }
     static void CreateTriangle()
@@ -164,6 +164,7 @@ namespace ShapeTracker
       Console.WriteLine("-----------------------------------------");
       Main();
       // instead of main, navigate to a rect-nav or update the nav for triangle/rect.
+      // need to add navRect to choose new rect or showrect list...
     }
 
   }
